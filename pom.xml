@@ -174,15 +174,7 @@ under the License.
     </contributor>
   </contributors>
   
-  <scm>
-    <connection>scm:git:https://gitbox.apache.org/repos/asf/commons-logging</connection>
-    <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/commons-logging</developerConnection>
-    <url>https://gitbox.apache.org/repos/asf/commons-logging</url>
-  </scm>
-
   <build>
-    <!-- TODO spotbugs:check -->
-    <!-- TODO replace clirr:check with japicmp:cmp -->
     <defaultGoal>clean package apache-rat:check japicmp:cmp javadoc:javadoc checkstyle:check</defaultGoal>
     <plugins>
 
@@ -382,6 +374,7 @@ under the License.
           -->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
+        <version>${commons.surefire.version}</version> 
         <executions>
           <execution>
             <id>integration-test</id>
@@ -414,6 +407,7 @@ under the License.
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
+        <version>3.6</version>
         <configuration>
           <descriptors>
             <descriptor>src/main/assembly/bin.xml</descriptor>
@@ -426,6 +420,7 @@ under the License.
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.6.0</version>
         <executions>
           <execution>
             <goals>
@@ -556,6 +551,7 @@ under the License.
     <commons.jira.pid>12310484</commons.jira.pid>
     <!-- The RC version used in the staging repository URL. -->
     <commons.rc.version>RC1</commons.rc.version>
+    <commons.surefire.version>2.12</commons.surefire.version>
     <skipSurefireReport>true</skipSurefireReport>
     <!-- Allow default test run order to be changed -->
     <failsafe.runorder>filesystem</failsafe.runorder>
